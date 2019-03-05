@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { string } from 'prop-types';
 import './App.css';
 
-// eslint-disable-next-line react/prefer-stateless-function
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>ENEKcalc</h1>
-      </div>
-    );
-  }
-}
+const App = ({ title }) => <div><h1>{title}</h1></div>;
+
+App.propTypes = {
+  title: string.isRequired,
+};
+
+export default App;
