@@ -1,8 +1,12 @@
 import React from 'react';
 import { string } from 'prop-types';
-import './App.scss';
+import styles from './App.scss';
 
-const App = ({ title }) => <div><h1 className="title">{title}</h1></div>;
+const App = ({ title }) => (
+  <div className={styles.app}>
+    <h1 className={styles.title}>{title}</h1>
+  </div>
+);
 
 App.propTypes = {
   title: string.isRequired,

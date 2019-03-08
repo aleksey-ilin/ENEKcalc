@@ -15,8 +15,24 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(css|scss)$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]_[local]__[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]_[local]__[hash:base64:5]',
+            },
+          },
+        ],
       },
     ],
   },
