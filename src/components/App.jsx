@@ -1,15 +1,17 @@
 import React from 'react';
 import { string } from 'prop-types';
 import styles from './App.scss';
+import Functions from './Functions';
 
-const App = ({ title }) => (
-  <div className={styles.app}>
-    <h1 className={styles.title}>{title}</h1>
+const App = () => (
+  <div className={styles.root}>
+    <div className={styles.calc}>
+      <Functions />
+    </div>
   </div>
 );
 
 App.propTypes = {
-  title: string.isRequired,
 };
 
 export default App;

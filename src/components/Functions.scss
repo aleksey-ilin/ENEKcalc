@@ -1,0 +1,61 @@
+.root {
+  width: 200px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-right: 1px solid #000;
+
+  .header {
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
+    height: 20px;
+  }
+
+  .container{
+    margin: 10px;
+    height: 480px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    button {
+      margin: 0;
+      margin-bottom: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      &:active, &:focus {
+        outline: none;
+      }
+    }
+    .active {
+      background-color: lightgray;
+    }
+    .steamWater {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      div {
+        padding-left: 10px;
+      }
+      button {
+        margin-left: 10px;
+      }
+      .saturation {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        button {
+          margin-left: 10px;
+        }
+      }
+      .heatTransfer {
+        button {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
