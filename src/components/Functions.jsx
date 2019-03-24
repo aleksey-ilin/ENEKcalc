@@ -4,10 +4,7 @@ import styles from './Functions.scss';
 export default class Functions extends React.Component {
   state = { activeFunction: '' };
 
-  handleClick = func => () => {
-    console.log(111);
-    this.setState({ activeFunction: func });
-  }
+  handleClick = func => () => this.setState({ activeFunction: func });
 
   render() {
     const { activeFunction } = this.state;
