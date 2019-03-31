@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Functions.scss';
 
 export default class Functions extends React.Component {
   state = { activeFunction: '' };
 
-  handleClick = func => () => this.setState({ activeFunction: func });
+  handleClick = func => () => {
+    this.setState({ activeFunction: func });
+    const { updateActiveFunction } = this.props;
+    updateActiveFunction(func);
+  }
 
   render() {
     const { activeFunction } = this.state;
@@ -39,3 +44,7 @@ export default class Functions extends React.Component {
     );
   }
 }
+
+Functions.propTypes = {
+  updateActiveFunction: PropTypes.func.isRequired,
+};
