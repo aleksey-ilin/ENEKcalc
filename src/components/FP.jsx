@@ -5,7 +5,9 @@ const Main = () => (
   <div className={styles.root}>
     <table>
       <tbody>
-        <tr><th colSpan="4">Исходные данные</th></tr>
+        <tr>
+          <th colSpan="4">Исходные данные</th>
+        </tr>
         <tr>
           <td colSpan="2">Давление</td>
           <td>0,1</td>
@@ -28,10 +30,10 @@ const Main = () => (
           <td>Н/м</td>
         </tr>
         <tr>
-          <th>{}</th>
-          <th>Пар</th>
-          <th>Вода</th>
-          <th>{}</th>
+          <th className={styles.one}>{}</th>
+          <th className={styles.two}>Пар</th>
+          <th className={styles.three}>Вода</th>
+          <th className={styles.four}>{}</th>
         </tr>
         <tr>
           <td>Удельный объём</td>

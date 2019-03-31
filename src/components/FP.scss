@@ -1,0 +1,28 @@
+.root {
+  table {
+    border-right: 1px solid black;
+    border-collapse: collapse;
+    tr {
+      border-bottom: 1px solid black;
+    }
+    th {
+      padding: 0;
+      border-right: 1px solid black;
+    }
+    td {
+      border-right: 1px solid black;
+    }
+    .one {
+      width: 210px;
+    }
+    .two {
+      width: 80px;
+    }
+    .three {
+      width: 80px;
+    }
+    .four {
+      width: 90px;
+    }
+  }
+}
