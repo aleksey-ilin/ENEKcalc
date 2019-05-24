@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './FP.scss';
 
-const Main = () => (
+const FP = () => (
   <div className={styles.root}>
     <table>
       <tbody>
@@ -122,4 +122,4 @@ const Main = () => (
   </div>
 );
 
-export default Main;
+export default FP;
