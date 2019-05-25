@@ -6,7 +6,7 @@ import FP from './FP';
 
 const App = () => {
   const [activeFunction, updateActiveFunction] = useState('');
-  console.log(activeFunction);
+  // console.log(activeFunction);
 
   return (
     <div className={styles.root}>

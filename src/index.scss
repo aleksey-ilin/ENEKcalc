@@ -7,3 +7,5 @@ p {
   padding: 0;
   margin: 0;
 }
+
+button::-moz-focus-inner { border: 0; }

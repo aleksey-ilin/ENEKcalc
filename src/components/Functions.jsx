@@ -4,7 +4,7 @@ import styles from './Functions.scss';
 
 const Functions = ({ activeFunction, updateActiveFunction }) => {
   const handleClick = func => () => updateActiveFunction(func);
-  console.log(activeFunction);
+  // console.log(activeFunction);
 
   return (
     <div className={styles.root}>
