@@ -20,7 +20,7 @@ export default class Functions extends React.Component {
           <div className={styles.steamWater}>
             Пар-Вода
             <div className={styles.saturation}>
-              Параметры насыщения
+              <p>Параметры насыщения</p>
               <button type="button" onClick={this.handleClick('P')} className={activeFunction === 'P' ? styles.active : null}>F(P)</button>
               <button type="button" onClick={this.handleClick('T')} className={activeFunction === 'T' ? styles.active : null}>F(T)</button>
             </div>
@@ -31,7 +31,7 @@ export default class Functions extends React.Component {
             <button type="button" onClick={this.handleClick('TH')} className={activeFunction === 'TH' ? styles.active : null}>F(T,H)</button>
             <button type="button" onClick={this.handleClick('HS')} className={activeFunction === 'HS' ? styles.active : null}>F(H,S)</button>
             <div className={styles.heatTransfer}>
-              Теплоперепад
+              <p>Теплоперепад</p>
               <button type="button" onClick={this.handleClick('P0H0DH')} className={activeFunction === 'P0H0DH' ? styles.active : null}>F(P0,H0,DH)</button>
               <button type="button" onClick={this.handleClick('H0PkDH')} className={activeFunction === 'H0PkDH' ? styles.active : null}>F(H0,Pk,DH)</button>
               <button type="button" onClick={this.handleClick('P0H0Pk')} className={activeFunction === 'P0H0Pk' ? styles.active : null}>F(P0,H0,Pk)</button>
