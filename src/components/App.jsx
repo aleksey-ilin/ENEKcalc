@@ -6,12 +6,12 @@ import FP from './FP';
 
 const App = () => {
   const [activeFunction, updateActiveFunction] = useState('');
-
   console.log(activeFunction);
+
   return (
     <div className={styles.root}>
       <div className={styles.calc}>
-        <Functions updateActiveFunction={updateActiveFunction} />
+        <Functions updateActiveFunction={updateActiveFunction} activeFunction={activeFunction} />
         {activeFunction === '' ? <Main /> : <FP />}
       </div>
     </div>
