@@ -10,14 +10,14 @@ const FP = () => {
       <table>
         <tbody>
           <tr>
-            <th colSpan="4">Исходные данные</th>
+            <th colSpan="4" className={styles.headline}>Исходные данные</th>
           </tr>
           <tr>
             <td colSpan="2">Давление</td>
-            <td><input onChange={handleChange} type="number" step="0.05" /></td>
+            <td><input onChange={handleChange} type="number" step="0.01" /></td>
             <td>МПа</td>
           </tr>
-          <tr><th colSpan="4">Результаты расчёта</th></tr>
+          <tr><th colSpan="4" className={styles.headline}>Результаты расчёта</th></tr>
           <tr>
             <td colSpan="2">Температура</td>
             <td>{(P * 100 / 0.1).toFixed(3)}</td>
@@ -33,7 +33,7 @@ const FP = () => {
             <td>{(P * 0.06 / 0.1).toFixed(4)}</td>
             <td>Н/м</td>
           </tr>
-          <tr>
+          <tr className={styles.headline}>
             <th className={styles.one}>{}</th>
             <th className={styles.two}>Пар</th>
             <th className={styles.three}>Вода</th>
