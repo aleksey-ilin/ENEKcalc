@@ -2,7 +2,7 @@
   table {
     border-right: 1px solid black;
     border-collapse: collapse;
-    tr {
+    tr:not(:last-child) {
       border-bottom: 1px solid black;
     }
     th {

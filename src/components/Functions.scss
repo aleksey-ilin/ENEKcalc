@@ -1,6 +1,6 @@
 .root {
   width: 200px;
-  height: 500px;
+  height: 435px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -11,6 +11,7 @@
     border-bottom: 1px solid #000;
     height: 20px;
     background-color: #c5e6f8;
+    font-weight: bold;
   }
 
   .container{
