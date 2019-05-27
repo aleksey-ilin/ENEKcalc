@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styles from './FP.scss';
 
 const FP = () => {
-  const [P, updateP] = useState(0);
-  console.log(P);
-  const handleChange = ({ target: { value } }) => updateP(value);
+  const [T, updateT] = useState(0);
+  console.log(T);
+  const handleChange = ({ target: { value } }) => updateT(value);
   return (
     <div className={styles.root}>
       <table>
@@ -13,24 +13,24 @@ const FP = () => {
             <th colSpan="4" className={styles.headline}>Исходные данные</th>
           </tr>
           <tr>
-            <td colSpan="2">Давление</td>
+            <td colSpan="2">Температура</td>
             <td><input onChange={handleChange} type="number" step="0.01" /></td>
-            <td>МПа</td>
+            <td>&#176;С</td>
           </tr>
           <tr><th colSpan="4" className={styles.headline}>Результаты расчёта</th></tr>
           <tr>
-            <td colSpan="2">Температура</td>
-            <td>{(P * 100 / 0.1).toFixed(3)}</td>
-            <td>&#176;С</td>
+            <td colSpan="2">Давление</td>
+            <td>{(T * 1.55467 / 200).toFixed(5)}</td>
+            <td>МПа</td>
           </tr>
           <tr>
             <td colSpan="2">Скрытая теплота парообразования</td>
-            <td>{(P * 2256 / 0.1).toFixed(4)}</td>
+            <td>{(T * 1939.6685 / 200).toFixed(4)}</td>
             <td>кДж/(кг*К)</td>
           </tr>
           <tr>
             <td colSpan="2">Коэффициент поверхностного натяжения</td>
-            <td>{(P * 0.06 / 0.1).toFixed(4)}</td>
+            <td>{(T * 0.0377 / 200).toFixed(4)}</td>
             <td>Н/м</td>
           </tr>
           <tr className={styles.headline}>
@@ -41,80 +41,80 @@ const FP = () => {
           </tr>
           <tr>
             <td>Удельный объём</td>
-            <td>{(P * 1.67 / 0.1).toFixed(5)}</td>
-            <td>{(P * 0.001 / 0.1).toFixed(5)}</td>
+            <td>{(T * 0.12722 / 200).toFixed(5)}</td>
+            <td>{(T * 0.00116 / 200).toFixed(5)}</td>
             <td>м3/кг</td>
           </tr>
           <tr>
             <td>Энтальпия</td>
-            <td>{(P * 2657.6 / 0.1).toFixed(3)}</td>
-            <td>{(P * 419 / 0.1).toFixed(3)}</td>
+            <td>{(T * 2792.062 / 200).toFixed(3)}</td>
+            <td>{(T * 852.393 / 200).toFixed(3)}</td>
             <td>кДж/кг</td>
           </tr>
           <tr>
             <td>Энтропия</td>
-            <td>{(P * 7.35 / 0.1).toFixed(4)}</td>
-            <td>{(P * 1.3 / 0.1).toFixed(4)}</td>
+            <td>{(T * 6.4303 / 200).toFixed(4)}</td>
+            <td>{(T * 2.3308 / 200).toFixed(4)}</td>
             <td>кДж/(кг*К)</td>
           </tr>
           <tr>
             <td>Внутренняя энергия</td>
-            <td>{(P * 2506 / 0.1).toFixed(3)}</td>
-            <td>{(P * 419 / 0.1).toFixed(3)}</td>
+            <td>{(T * 2594.273 / 200).toFixed(3)}</td>
+            <td>{(T * 850.595 / 200).toFixed(3)}</td>
             <td>кДж/кг</td>
           </tr>
           <tr>
             <td>Изохорная теплоёмкость</td>
-            <td>{(P * 1.55 / 0.1).toFixed(4)}</td>
-            <td>{(P * 3.77 / 0.1).toFixed(4)}</td>
+            <td>{(T * 2.0677 / 200).toFixed(4)}</td>
+            <td>{(T * 3.3107 / 200).toFixed(4)}</td>
             <td>кДж/(кг*К)</td>
           </tr>
           <tr>
             <td>Изобарная теплоёмкость</td>
-            <td>{(P * 2.1 / 0.1).toFixed(4)}</td>
-            <td>{(P * 4.2 / 0.1).toFixed(4)}</td>
+            <td>{(T * 2.99 / 200).toFixed(4)}</td>
+            <td>{(T * 4.494 / 200).toFixed(4)}</td>
             <td>кДж/(кг*К)</td>
           </tr>
           <tr>
             <td>Скорость звука в среде</td>
-            <td>{(P * 472.3 / 0.1).toFixed(2)}</td>
-            <td>{(P * 1545.1 / 0.1).toFixed(2)}</td>
+            <td>{(T * 503.84 / 200).toFixed(2)}</td>
+            <td>{(T * 1331.48 / 200).toFixed(2)}</td>
             <td>м/с</td>
           </tr>
           <tr>
             <td>Плотность</td>
-            <td>{(P * 0.6 / 0.1).toFixed(4)}</td>
-            <td>{(P * 958.4 / 0.1).toFixed(4)}</td>
+            <td>{(T * 7.8603 / 200).toFixed(4)}</td>
+            <td>{(T * 864.6675 / 200).toFixed(4)}</td>
             <td>кг/м3</td>
           </tr>
           <tr>
             <td>Теплопроводность</td>
-            <td>{(P * 0.025 / 0.1).toFixed(4)}</td>
-            <td>{(P * 0.68 / 0.1).toFixed(4)}</td>
+            <td>{(T * 0.0391 / 200).toFixed(4)}</td>
+            <td>{(T * 0.6634 / 200).toFixed(4)}</td>
             <td>Вт/(м*К)</td>
           </tr>
           <tr>
             <td>Динамическая вязкость</td>
-            <td>{P === 0 ? 0.0000 : `${(P * 1.23 / 0.1).toFixed(4)}E-005`}</td>
-            <td>{P === 0 ? 0.0000 : `${(P * 2.82 / 0.1).toFixed(4)}E-004`}</td>
+            <td>{T === 0 ? 0.0000 : `${(T * 1.5715 / 200).toFixed(4)}E-005`}</td>
+            <td>{T === 0 ? 0.0000 : `${(T * 1.3423 / 200).toFixed(4)}E-004`}</td>
             <td>Па*с</td>
           </tr>
           <tr>
             <td>Кинематическая вязкость</td>
-            <td>{P === 0 ? 0.0000 : `${(P * 2.05 / 0.1).toFixed(4)}E-005`}</td>
-            <td>{P === 0 ? 0.0000 : `${(P * 2.94 / 0.1).toFixed(4)}E-007`}</td>
+            <td>{T === 0 ? 0.0000 : `${(T * 1.9993 / 200).toFixed(4)}E-006`}</td>
+            <td>{T === 0 ? 0.0000 : `${(T * 1.5534 / 200).toFixed(4)}E-007`}</td>
             <td>м2/с</td>
           </tr>
           <tr>
             <td>Число Прандтля</td>
-            <td>{(P * 1.03 / 0.1).toFixed(4)}</td>
-            <td>{(P * 1.75 / 0.1).toFixed(4)}</td>
+            <td>{(T * 1.2019 / 200).toFixed(4)}</td>
+            <td>{(T * 0.9099 / 200).toFixed(4)}</td>
             <td>{}</td>
           </tr>
           <tr>
             <td>Показатель адиабаты</td>
-            <td>{(P * 1.34 / 0.1).toFixed(3)}</td>
-            <td>{(P * 1.12 / 0.1).toFixed(3)}</td>
+            <td>{(T * 1.446 / 200).toFixed(3)}</td>
+            <td>{(T * 1.355 / 200).toFixed(3)}</td>
             <td>{}</td>
           </tr>
           <tr>
