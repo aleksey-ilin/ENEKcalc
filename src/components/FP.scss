@@ -16,13 +16,17 @@
       width: 210px;
     }
     .two {
-      width: 80px;
+      width: 110px;
     }
-    .three {
-      width: 80px;
+    .three, input {
+      width: 110px;
     }
     .four {
       width: 90px;
+    }
+    input {
+      line-height: 18px;
+      padding: 0;
     }
   }
 }
