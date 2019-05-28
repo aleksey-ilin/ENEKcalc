@@ -1,6 +1,7 @@
 .root {
   table {
     border-collapse: collapse;
+    height: 100%;
     tr:not(:last-child) {
       border-bottom: 1px solid black;
     }
