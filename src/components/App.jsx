@@ -12,7 +12,6 @@ const mapping = {
 
 const App = () => {
   const [activeFunction, updateActiveFunction] = useState('');
-  console.log(activeFunction);
 
   return (
     <div className={styles.root}>
@@ -20,6 +19,13 @@ const App = () => {
         <Functions updateActiveFunction={updateActiveFunction} activeFunction={activeFunction} />
         {activeFunction === '' ? <Main /> : mapping[activeFunction]}
       </div>
+      <button onClick={
+        () => fetch('http://enek.ru:3000/?h_pt=180&h_pt=18')
+        .then(response => response.json())
+        .then(console.log)
+      }>
+        get property
+      </button>
     </div>
   );
 };
