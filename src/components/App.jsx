@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import styles from './App.scss';
-import Functions from './Functions';
 import Main from './Main';
-import FP from './FP';
-import FT from './FT';
-
-const mapping = {
-  P: <FP />,
-  T: <FT />,
-};
 
 const App = () => {
   const [activeFunction, updateActiveFunction] = useState('');
@@ -16,8 +8,7 @@ const App = () => {
   return (
     <div className={styles.root}>
       <div className={styles.calc}>
-        <Functions updateActiveFunction={updateActiveFunction} activeFunction={activeFunction} />
-        {activeFunction === '' ? <Main /> : mapping[activeFunction]}
+        <Main />
       </div>
       <button
         type="button"
