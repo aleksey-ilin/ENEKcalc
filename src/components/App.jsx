@@ -19,11 +19,14 @@ const App = () => {
         <Functions updateActiveFunction={updateActiveFunction} activeFunction={activeFunction} />
         {activeFunction === '' ? <Main /> : mapping[activeFunction]}
       </div>
-      <button onClick={
-        () => fetch('http://enek.ru:3000/?h_pt=180&h_pt=18')
-        .then(response => response.json())
-        .then(console.log)
-      }>
+      <button
+        type="button"
+        onClick={
+        () => fetch('https://api.enek.dotterian.ru/?h_pt=180&h_pt=18')
+          .then(response => response.json())
+          .then(console.log)
+        }
+      >
         get property
       </button>
     </div>
