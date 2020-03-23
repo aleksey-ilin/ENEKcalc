@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import styles from './App.scss';
-import Main from './Main';
 
 const App = () => {
-  const [activeFunction, updateActiveFunction] = useState('');
+  const [temperature, setTemperature] = useState(null);
+  const [pressure, setPressure] = useState(null);
+
+  const getPressure = () => {
+  // fetch('https://api.enek.dotterian.ru/?h_pt=180&h_pt=18')
+  fetch(`https://api.enek.dotterian.ru/?psat_t=${temperature}`)
+    .then(response => response.json())
+    .then(pressure => setPressure(pressure))
+  }
 
   return (
     <div className={styles.root}>
-      <div className={styles.calc}>
-        <Main />
-      </div>
-      <button
-        type="button"
-        onClick={
-        () => fetch('https://api.enek.dotterian.ru/?h_pt=180&h_pt=18')
-          .then(response => response.json())
-          .then(console.log)
-        }
-      >
-        get property
-      </button>
+      <h1>Параметры на линии насыщения</h1>
+      <label htmlFor="temperature">Температура, &ordm;С</label>
+      <input id ="temperature" type="number" onChange={e => setTemperature(e.target.value)} />
+      <button type="button" onClick={getPressure}>рассчитать давление</button>
+      <p>Давление = {pressure} бар</p>
     </div>
   );
 };
