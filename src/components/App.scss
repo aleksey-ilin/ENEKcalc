@@ -1,4 +1,19 @@
 .root {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+
+  label {
+    margin-bottom: 20px;
+
+    input {
+      width: 150px;
+      margin-left: 10px;
+    }
+  }
+
+  button {
+    width: 275px;
+    margin-bottom: 20px;
+  }
 }

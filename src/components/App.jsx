@@ -13,19 +13,19 @@ const App = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <main className={styles.root}>
       <h1>Параметры на линии насыщения</h1>
       <label htmlFor="temperature">
         Температура, &ordm;С
         <input type="number" id="temperature" onChange={e => setTemperature(e.target.value)} />
       </label>
-      <button type="button" onClick={getPressure}>рассчитать давление</button>
+      <button type="button" onClick={getPressure}>Рассчитать давление</button>
       <p>
         {'Давление = '}
         {pressure}
         {' бар'}
       </p>
-    </div>
+    </main>
   );
 };
 
