@@ -14,13 +14,15 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-        "jsx": true
+      "jsx": true
     }
   },
   "rules": {
-    "console": "0",
+    "no-console": "off",
+    "react/destructuring-assignment": ["enabled", "always", { "ignoreClassFields": "boolean" }],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": ["enabled", { ignore: <ignore>, customValidators: <customValidator>, skipUndeclared: <skipUndeclared> }]
   },
   "plugins": [
     "react-hooks"
