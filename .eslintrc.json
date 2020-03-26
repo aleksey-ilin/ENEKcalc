@@ -19,10 +19,10 @@
   },
   "rules": {
     "no-console": "off",
-    "react/destructuring-assignment": ["enabled", "always", { "ignoreClassFields": "boolean" }],
-    "react-hooks/rules-of-hooks": "error",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": ["enabled", { ignore: <ignore>, customValidators: <customValidator>, skipUndeclared: <skipUndeclared> }]
+    "react-hooks/rules-of-hooks": "error"
   },
   "plugins": [
     "react-hooks"
