@@ -1,7 +1,7 @@
 .root {
   display: grid;
-  grid-template-columns: calc(40% - 15px) calc(60% - 15px);
   grid-column-gap: 30px;
+  grid-template-columns: calc(40% - 15px) calc(60% - 15px);
   height: calc(100vh - 80px);
   padding: 40px;
 }
