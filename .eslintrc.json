@@ -22,7 +22,13 @@
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "object-curly-newline": ["off", {
+      "ObjectExpression": "never",
+      "ObjectPattern": { "multiline": true },
+      "ImportDeclaration": "never",
+      "ExportDeclaration": { "multiline": true, "minProperties": 5 }
+  }]
   },
   "plugins": [
     "react-hooks"
