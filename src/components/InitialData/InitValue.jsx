@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select, MenuItem, TextField, InputAdornment } from '@material-ui/core';
-import styles from './InitialData.scss';
+import styles from './InitValue.scss';
 
 const InitValue = ({ nomenclature, defaultParameter }) => {
   // TODO: передать state в родительский компонент
