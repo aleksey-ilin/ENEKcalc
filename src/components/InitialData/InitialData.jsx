@@ -3,30 +3,38 @@ import { Typography, Box } from '@material-ui/core';
 import InitValue from './InitValue';
 import styles from './InitialData.scss';
 
+const parameters = {
+  saturation: 'Состояние насыщения',
+  p: 'Давление',
+  t: 'Температура',
+  h: 'Энтальпия',
+  s: 'Энтропия',
+};
+
 const nomenclature = {
   saturation: {
     id: 0,
-    name: 'Состояние насыщения',
+    name: parameters.saturation,
     units: '',
   },
   p: {
     id: 1,
-    name: 'Давление',
+    name: parameters.p,
     units: 'бар',
   },
   t: {
     id: 2,
-    name: 'Температура',
+    name: parameters.t,
     units: '°C',
   },
   h: {
     id: 3,
-    name: 'Энтальпия',
+    name: parameters.h,
     units: 'кДж/кг',
   },
   s: {
     id: 4,
-    name: 'Энтропия',
+    name: parameters.s,
     units: 'кДж/кг·К',
   },
 };
@@ -36,15 +44,27 @@ const InitialData = () => {
   const [initValue2, setInitValue2] = useState('saturation');
 
   const nomenclature1 = Object.keys(nomenclature).reduce((acc, parameter) => (
-    parameter === 'saturation' ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {});
+    (parameter === parameters.saturation || parameter === initValue2)
+      ? acc
+      : ({ ...acc, [parameter]: nomenclature[parameter] })), {});
   const nomenclature2 = Object.keys(nomenclature).reduce((acc, parameter) => (
     parameter === initValue1 ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {});
 
   return (
     <Box boxShadow={1} className={styles.root}>
       <Typography variant="h3" component="h3">Исходные данные</Typography>
-      <InitValue nomenclature={nomenclature1} defaultParameter="p" />
-      <InitValue nomenclature={nomenclature2} defaultParameter="saturation" />
+      <InitValue
+        nomenclature={nomenclature1}
+        defaultParameter={parameters.p}
+        initValue={initValue1}
+        setInitValue={setInitValue1}
+      />
+      <InitValue
+        nomenclature={nomenclature2}
+        defaultParameter={parameters.saturation}
+        initValue={initValue2}
+        setInitValue={setInitValue2}
+      />
     </Box>
   );
 };
