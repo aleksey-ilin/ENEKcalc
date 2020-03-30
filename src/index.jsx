@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { CssBaseline } from '@material-ui/core';
 import App from './components/App';
 import ErrorBoundary from './components/ErrorBoundary';
-import './index.scss';
 
-ReactDOM.render(<ErrorBoundary><App /></ErrorBoundary>, document.getElementById('root'));
+ReactDOM.render(
+  <ErrorBoundary><CssBaseline><App /></CssBaseline></ErrorBoundary>,
+  document.getElementById('root'),
+);
