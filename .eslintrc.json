@@ -23,7 +23,8 @@
     "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "semi": ["error", "never"]
   },
   "plugins": [
     "react-hooks"

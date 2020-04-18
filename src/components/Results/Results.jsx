@@ -1,7 +1,7 @@
-import React from 'react';
-import { Typography, Box } from '@material-ui/core';
-import Result from './Result';
-import styles from './Results.scss';
+import React from 'react'
+import { Typography, Box } from '@material-ui/core'
+import Result from './Result'
+import styles from './Results.scss'
 
 const dataFromServer = {
   v: 2.14192,
@@ -17,12 +17,12 @@ const dataFromServer = {
   // кинематическая вязкость
   // число Прандтля
   // показатель адиабаты
-};
+}
 
 const Results = () => (
   <Box boxShadow={1} className={styles.root}>
     <Typography className={styles.title} variant="h4" component="h2">Результаты</Typography>
     <Result />
   </Box>
-);
-export default Results;
+)
+export default Results

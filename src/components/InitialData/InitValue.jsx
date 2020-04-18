@@ -1,6 +1,6 @@
-import React from 'react';
-import { Select, MenuItem, TextField, InputAdornment } from '@material-ui/core';
-import styles from './InitValue.scss';
+import React from 'react'
+import { Select, MenuItem, TextField, InputAdornment } from '@material-ui/core'
+import styles from './InitValue.scss'
 
 const InitValue = ({ nomenclature, initValue, setInitValue }) => (
   <div className={styles.root}>
@@ -27,6 +27,6 @@ const InitValue = ({ nomenclature, initValue, setInitValue }) => (
       />
     )}
   </div>
-);
+)
 
-export default InitValue;
+export default InitValue

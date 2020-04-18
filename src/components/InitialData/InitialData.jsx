@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Typography, Box } from '@material-ui/core';
-import InitValue from './InitValue';
-import styles from './InitialData.scss';
+import React, { useState } from 'react'
+import { Typography, Box } from '@material-ui/core'
+import InitValue from './InitValue'
+import styles from './InitialData.scss'
 
 const nomenclature = {
   saturation: {
@@ -29,16 +29,16 @@ const nomenclature = {
     name: 'Энтропия',
     units: 'кДж/кг·К',
   },
-};
+}
 
 const InitialData = () => {
-  const [initValue1, setInitValue1] = useState('p');
-  const [initValue2, setInitValue2] = useState('saturation');
+  const [initValue1, setInitValue1] = useState('p')
+  const [initValue2, setInitValue2] = useState('saturation')
 
   const nomenclature1 = Object.keys(nomenclature).reduce((acc, parameter) => (
-    parameter === initValue2 ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {});
+    parameter === initValue2 ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {})
   const nomenclature2 = Object.keys(nomenclature).reduce((acc, parameter) => (
-    parameter === initValue1 ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {});
+    parameter === initValue1 ? acc : ({ ...acc, [parameter]: nomenclature[parameter] })), {})
 
   return (
     <Box boxShadow={1} className={styles.root}>
@@ -54,7 +54,7 @@ const InitialData = () => {
         setInitValue={setInitValue2}
       />
     </Box>
-  );
-};
+  )
+}
 
-export default InitialData;
+export default InitialData

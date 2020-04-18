@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 export default class ErrorBoundary extends React.Component {
   state = { error: null, errorInfo: null };
 
   componentDidCatch(error, errorInfo) {
-    this.setState({ error, errorInfo });
+    this.setState({ error, errorInfo })
   }
 
   render() {
-    const { error, errorInfo } = this.state;
+    const { error, errorInfo } = this.state
 
     if (errorInfo) {
       return (
@@ -20,8 +20,8 @@ export default class ErrorBoundary extends React.Component {
             {errorInfo.componentStack}
           </details>
         </div>
-      );
+      )
     }
-    return this.props.children;
+    return this.props.children
   }
 }

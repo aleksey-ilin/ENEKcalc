@@ -1,6 +1,6 @@
-import React from 'react';
-import { Typography, Box } from '@material-ui/core';
-import styles from './Result.scss';
+import React from 'react'
+import { Typography, Box } from '@material-ui/core'
+import styles from './Result.scss'
 
 const Result = () => (
   <Box className={styles.root} borderBottom={1}>
@@ -8,5 +8,5 @@ const Result = () => (
     <Typography className={styles.value} component="span">2,14192</Typography>
     <Typography className={styles.unit} component="span">м3/кг</Typography>
   </Box>
-);
-export default Result;
+)
+export default Result
