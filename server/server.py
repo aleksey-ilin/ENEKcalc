@@ -21,7 +21,7 @@ def app(environ, start_response):
     # elif len(args) == 2:
     #     result = getResult(int(args[0]), int(args[1]))
 
-    result = '123'
+    result = 123
     status = '200 OK'
     response_headers = [
         ('Content-type', 'application/json;charset=utf-8'),

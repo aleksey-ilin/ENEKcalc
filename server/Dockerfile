@@ -7,4 +7,6 @@ RUN pip install iapws
 
 COPY server.py /server.py
 
-CMD [ "gunicorn", "-b", "127.0.0.1:80", "server:app"]
+EXPOSE 3000
+
+CMD [ "gunicorn", "-b", "0.0.0.0:3000", "server:app"]
