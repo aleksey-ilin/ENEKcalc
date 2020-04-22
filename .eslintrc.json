@@ -20,6 +20,7 @@
   "rules": {
     "no-console": "off",
     "react/destructuring-assignment": "off",
+    // TODO: включить проверку типов prop-types
     "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",

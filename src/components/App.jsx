@@ -7,7 +7,7 @@ const App = () => (
   <div className={styles.root}>
     <InitialData />
     <Results />
-    <button
+    {/* <button
       type="button"
       onClick={() => {
         fetch('http://0.0.0.0:3000/?P=1&x=1')
@@ -16,7 +16,7 @@ const App = () => (
       }}
     >
       проверка сервера
-    </button>
+    </button> */}
   </div>
 )
 

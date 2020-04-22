@@ -12,7 +12,7 @@ const nomenclature = {
   p: {
     id: 1,
     name: 'Давление',
-    units: 'бар',
+    units: 'МПа',
   },
   t: {
     id: 2,
@@ -27,7 +27,7 @@ const nomenclature = {
   s: {
     id: 4,
     name: 'Энтропия',
-    units: 'кДж/кг·К',
+    units: 'кДж/(кг·К)',
   },
 }
 
