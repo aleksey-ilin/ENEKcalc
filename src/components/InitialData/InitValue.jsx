@@ -20,7 +20,7 @@ const InitValue = ({ nomenclature, initValue, setInitValue }) => (
         className={styles.value}
         type="number"
         InputProps={{
-          endAdornment: <InputAdornment position="end">{nomenclature[initValue].units}</InputAdornment>,
+          endAdornment: <InputAdornment position="end">{nomenclature[initValue].unit}</InputAdornment>,
         }}
         // eslint-disable-next-line react/jsx-no-duplicate-props
         inputProps={{ min: '0' }}
