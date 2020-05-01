@@ -1,1 +1,0 @@
-# Electronic reference book "Thermophysical properties of coolants"
