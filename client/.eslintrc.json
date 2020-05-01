@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "react/destructuring-assignment": "off",
+    // TODO: включить проверку типов prop-types
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "object-curly-newline": "off",
+    "semi": ["error", "never"]
+  },
+  "plugins": [
+    "react-hooks"
+  ]
+}
