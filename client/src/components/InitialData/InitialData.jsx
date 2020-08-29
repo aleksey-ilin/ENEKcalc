@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { Typography, Box } from '@material-ui/core'
 import { properties } from '../../properties'
 import InitValue from './InitValue'
+
 import styles from './InitialData.scss'
 
 const initialPropertiesName = ['saturation', 'P', 'T', 'h', 's']
 const initialProperties = Object
   .keys(properties)
-  .filter(property => initialPropertiesName.includes(property))
+  .filter((property) => initialPropertiesName.includes(property))
   .reduce((acc, property) => ({ ...acc, [property]: properties[property] }), {})
 
 const InitialData = () => {

@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography, Box } from '@material-ui/core'
 import { properties } from '../../properties'
 import Result from './Result'
+
 import styles from './Results.scss'
 
 const dataFromServer = {
@@ -25,7 +26,7 @@ const dataFromServer = {
 const Results = () => (
   <Box boxShadow={1} className={styles.root}>
     <Typography className={styles.title} variant="h4" component="h2">Результаты</Typography>
-    {Object.keys(dataFromServer).map(property => (
+    {Object.keys(dataFromServer).map((property) => (
       <Result
         key={properties[property].id}
         name={properties[property].name}

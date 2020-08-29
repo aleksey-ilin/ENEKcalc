@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography, Box } from '@material-ui/core'
+
 import styles from './Result.scss'
 
 const Result = ({ name, value, unit }) => (

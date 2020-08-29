@@ -1,5 +1,6 @@
 import React from 'react'
 import { Select, MenuItem, TextField, InputAdornment } from '@material-ui/core'
+
 import styles from './InitValue.scss'
 
 const InitValue = ({ nomenclature, initValue, setInitValue }) => (
@@ -7,9 +8,9 @@ const InitValue = ({ nomenclature, initValue, setInitValue }) => (
     <Select
       className={styles.name}
       value={initValue}
-      onChange={event => setInitValue(event.target.value)}
+      onChange={(event) => setInitValue(event.target.value)}
     >
-      {Object.keys(nomenclature).map(parameter => (
+      {Object.keys(nomenclature).map((parameter) => (
         <MenuItem key={nomenclature[parameter].id} value={parameter}>
           {nomenclature[parameter].name}
         </MenuItem>

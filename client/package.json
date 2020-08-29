@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --mode development --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint": "npx eslint . --ext .js,.jsx"
   },
   "jest": {
     "moduleNameMapper": {

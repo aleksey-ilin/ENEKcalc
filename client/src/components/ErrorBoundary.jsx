@@ -1,7 +1,10 @@
 import React from 'react'
 
 export default class ErrorBoundary extends React.Component {
-  state = { error: null, errorInfo: null };
+  constructor(props) {
+    super(props)
+    this.state = { error: null, errorInfo: null }
+  }
 
   componentDidCatch(error, errorInfo) {
     this.setState({ error, errorInfo })
