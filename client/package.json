@@ -14,6 +14,11 @@
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "author": "Aleksey Ilin",
   "license": "ISC",
   "devDependencies": {
@@ -33,6 +38,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
     "jest": "^26.4.2",
     "node-sass": "^4.13.1",
     "react-test-renderer": "^16.13.1",
