@@ -1,6 +1,6 @@
 {
   "name": "enekcalc",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Electronic reference book 'Thermophysical properties of coolants'",
   "main": "index.jsx",
   "scripts": {
