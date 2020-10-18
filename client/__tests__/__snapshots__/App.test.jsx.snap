@@ -2,8 +2,413 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <h1>
-    ENEKcalc
-  </h1>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h4"
+    >
+      Исходные данные
+    </h2>
+    <div>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInput-underline"
+        onClick={[Function]}
+      >
+        <div
+          aria-haspopup="listbox"
+          className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Давление
+        </div>
+        <input
+          aria-hidden={true}
+          className="MuiSelect-nativeInput"
+          onAnimationStart={[Function]}
+          onChange={[Function]}
+          tabIndex={-1}
+          value="P"
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSelect-icon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+      <div
+        className="MuiFormControl-root MuiTextField-root"
+      >
+        <div
+          className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+            disabled={false}
+            min="0"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="number"
+          />
+          <div
+            className="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+          >
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+            >
+              МПа
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="MuiInputBase-root MuiInput-root MuiInput-underline"
+        onClick={[Function]}
+      >
+        <div
+          aria-haspopup="listbox"
+          className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Состояние насыщения
+        </div>
+        <input
+          aria-hidden={true}
+          className="MuiSelect-nativeInput"
+          onAnimationStart={[Function]}
+          onChange={[Function]}
+          tabIndex={-1}
+          value="saturation"
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSelect-icon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    <h2
+      className="MuiTypography-root MuiTypography-h4"
+    >
+      Результаты
+    </h2>
+    <div
+      className="MuiBox-root MuiBox-root-3"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Давление
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.10142
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        МПа
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-4"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Температура
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        200
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        °C
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-5"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Удельный объем
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        2.14192
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        м³/кг
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-6"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Энтальпия
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        2875.409
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кДж/кг
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-7"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Энтропия
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        7.8289
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кДж/(кг·К)
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-8"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Внутренняя энергия
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        2658.176
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кДж/кг
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-9"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Изохорная теплоемкость
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        1.4995
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кДж/(кг·К)
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-10"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Изобарная теплоемкость
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        1.9762
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кДж/(кг·К)
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-11"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Скорость звука в среде
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        533.65
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        м/с
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-12"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Плотность
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.4669
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        кг/м³
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-13"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Теплопроводность
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.0334
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        Вт/(кг·К)
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-14"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Динамическая вязкость
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.000016176
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        Па·с
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-15"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Кинематическая вязкость
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.000034649
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        м²/c
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-16"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Число Прандтля
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        0.958
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        
+      </span>
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-17"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h6"
+      >
+        Показатель адиабаты
+      </h3>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        1.318
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        
+      </span>
+    </div>
+  </div>
 </div>
 `;

@@ -1,14 +1,12 @@
 {
   "extends": [
     "airbnb",
-    "plugin:jest/recommended",
     "plugin:react/recommended"
   ],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "node": true,
-    "jest": true
+    "node": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -29,5 +27,21 @@
   },
   "plugins": [
     "react-hooks"
+  ],
+  "overrides": [
+    {
+      "files": ["cypress/**/*"],
+      "env": {
+        "cypress/globals": true
+      },
+      "plugins": ["cypress"]
+    },
+    {
+      "files": ["__tests__/*"],
+      "env": {
+        "jest": true
+      },
+      "extends": "plugin:jest/recommended"
+    }
   ]
 }

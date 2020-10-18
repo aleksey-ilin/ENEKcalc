@@ -7,7 +7,9 @@
     "test": "jest",
     "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
-    "lint": "npx eslint . --ext .js,.jsx"
+    "lint": "npx eslint . --ext .js,.jsx",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "jest": {
     "moduleNameMapper": {
@@ -16,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "yarn lint && yarn test && yarn cypress:run"
     }
   },
   "author": "Aleksey Ilin",
@@ -30,8 +32,10 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "css-loader": "2.1.1",
-    "eslint": "^7.7.0",
+    "cypress": "^5.4.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
