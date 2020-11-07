@@ -410,5 +410,11 @@ exports[`renders correctly 1`] = `
       </span>
     </div>
   </div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    проверка сервера
+  </button>
 </div>
 `;

@@ -1,8 +1,8 @@
 # Dockerfile
 FROM python:3.8.2
 
+RUN pip install -U pip
 RUN pip install gunicorn
-RUN pip install scipy
 RUN pip install iapws
 
 COPY server.py /server.py

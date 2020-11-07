@@ -8,16 +8,16 @@ const App = () => (
   <div className={styles.root}>
     <InitialData />
     <Results />
-    {/* <button
+    <button
       type="button"
       onClick={() => {
         fetch('http://0.0.0.0:3000/?P=1&x=1')
-          .then(response => response.json())
-          .then(data => console.log(data))
+          .then((response) => response.json())
+          .then((data) => console.log(data))
       }}
     >
       проверка сервера
-    </button> */}
+    </button>
   </div>
 )
 

@@ -1,0 +1,6 @@
+client/node_modules
+client/dist
+/.vscode
+/server/__pycache__
+/server/venv/
+yarn-error.log
