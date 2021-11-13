@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Typography, Box } from '@material-ui/core'
 import { properties } from '../../properties'
 import InitValue from './InitValue'
 
@@ -21,8 +20,8 @@ const InitialData = () => {
     parameter === initValue1 ? acc : ({ ...acc, [parameter]: initialProperties[parameter] })), {})
 
   return (
-    <Box boxShadow={1} className={styles.root}>
-      <Typography className={styles.title} variant="h4" component="h2">Исходные данные</Typography>
+    <div boxShadow={1} className={styles.root}>
+      <h4 className={styles.title} variant="h4" component="h2">Исходные данные</h4>
       <InitValue
         nomenclature={initialProperties1}
         initValue={initValue1}
@@ -33,7 +32,7 @@ const InitialData = () => {
         initValue={initValue2}
         setInitValue={setInitValue2}
       />
-    </Box>
+    </div>
   )
 }
 

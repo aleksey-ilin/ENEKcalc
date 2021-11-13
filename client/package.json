@@ -2,14 +2,14 @@
   "name": "enekcalc",
   "version": "0.0.1",
   "description": "Electronic reference book 'Thermophysical properties of coolants'",
-  "main": "index.jsx",
   "scripts": {
-    "test": "jest",
     "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "lint": "npx eslint . --ext .js,.jsx",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "test:unit": "jest",
+    "test:e2e:open": "cypress open",
+    "test:e2e:run": "cypress run",
+    "test": "yarn test:unit && yarn test:e2e:run"
   },
   "jest": {
     "moduleNameMapper": {
@@ -18,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn test && yarn cypress:run"
+      "pre-commit": "yarn lint && yarn test"
     }
   },
   "author": "Aleksey Ilin",
@@ -58,7 +58,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.0-rc.1",

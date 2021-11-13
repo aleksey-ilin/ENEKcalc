@@ -1,5 +1,4 @@
 import React from 'react'
-import { Typography, Box } from '@material-ui/core'
 import { properties } from '../../properties'
 import Result from './Result'
 
@@ -24,8 +23,8 @@ const dataFromServer = {
 }
 
 const Results = () => (
-  <Box boxShadow={1} className={styles.root}>
-    <Typography className={styles.title} variant="h4" component="h2">Результаты</Typography>
+  <div boxShadow={1} className={styles.root}>
+    <h4 className={styles.title} variant="h4" component="h2">Результаты</h4>
     {Object.keys(dataFromServer).map((property) => (
       <Result
         key={properties[property].id}
@@ -34,6 +33,6 @@ const Results = () => (
         unit={properties[property].unit}
       />
     ))}
-  </Box>
+  </div>
 )
 export default Results
