@@ -22,7 +22,7 @@ const dataFromServer = {
   cp_cv: 1.318, // показатель адиабаты
 }
 
-const Results = () => (
+export const Results = () => (
   <div boxShadow={1} className={styles.root}>
     <h4 className={styles.title} variant="h4" component="h2">Результаты</h4>
     {Object.keys(dataFromServer).map((property) => (
@@ -35,4 +35,3 @@ const Results = () => (
     ))}
   </div>
 )
-export default Results

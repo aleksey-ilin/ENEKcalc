@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { properties } from '../../properties'
-import InitValue from './InitValue'
+import { InitValue } from './InitValue'
 
 import styles from './InitialData.scss'
 
@@ -10,7 +10,7 @@ const initialProperties = Object
   .filter((property) => initialPropertiesName.includes(property))
   .reduce((acc, property) => ({ ...acc, [property]: properties[property] }), {})
 
-const InitialData = () => {
+export const InitialData = () => {
   const [initValue1, setInitValue1] = useState('P')
   const [initValue2, setInitValue2] = useState('saturation')
 
@@ -35,5 +35,3 @@ const InitialData = () => {
     </div>
   )
 }
-
-export default InitialData

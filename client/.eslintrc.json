@@ -3,7 +3,7 @@
     "airbnb",
     "plugin:react/recommended"
   ],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
     "node": true
@@ -17,13 +17,17 @@
   },
   "rules": {
     "no-console": "off",
+    "import/prefer-default-export": "off",
+    "object-curly-newline": "off",
+    "semi": ["error", "never"],
     "react/destructuring-assignment": "off",
-    // TODO: включить проверку типов prop-types
     "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "object-curly-newline": "off",
-    "semi": ["error", "never"]
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function"
+    }]
   },
   "plugins": [
     "react-hooks"

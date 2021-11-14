@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './InitValue.scss'
 
-const InitValue = ({ nomenclature, initValue, setInitValue }) => (
+export const InitValue = ({ nomenclature, initValue, setInitValue }) => (
   <div className={styles.root}>
     <select
       className={styles.name}
@@ -23,4 +23,3 @@ const InitValue = ({ nomenclature, initValue, setInitValue }) => (
     )}
   </div>
 )
-export default InitValue
