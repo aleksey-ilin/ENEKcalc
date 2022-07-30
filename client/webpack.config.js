@@ -18,42 +18,19 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]_[local]__[hash:base64:5]',
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]_[local]__[hash:base64:5]',
-            },
-          },
+          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'sass-loader' },
         ],
       },
       {
         test: /\.(eot|svg|png|jpg|ttf|woff|woff2)$/i,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 20000,
-            },
-          },
+          { loader: 'url-loader', options: { limit: 20000 } },
         ],
       },
     ],
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx'],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
+  resolve: { extensions: ['*', '.js', '.jsx'] },
+  plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
   devtool: 'source-map',
 }
