@@ -6,20 +6,21 @@
   "parser": "@babel/eslint-parser",
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "requireConfigFile": false
   },
   "rules": {
     "no-console": "off",
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
-    "semi": ["error", "never"],
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
     "react-hooks/exhaustive-deps": "warn",
@@ -27,10 +28,12 @@
     "react/function-component-definition": [2, {
       "namedComponents": "arrow-function",
       "unnamedComponents": "arrow-function"
-    }]
+    }],
+    "max-len": ["error", { "code": 120 }]
   },
   "plugins": [
-    "react-hooks"
+    "react-hooks",
+    "jest"
   ],
   "overrides": [
     {
