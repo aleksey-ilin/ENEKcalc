@@ -24,6 +24,10 @@ const n = [
  * @returns {number} ps Saturation pressure, MPa
  * */
 export const getPsFromTs = (ts) => {
+  if (ts <= 273.15 || ts >= 647.096) {
+    throw Error('Температура меньше 273.15 K или больше 647.096 K');
+  }
+
   /** Transformed temperature, MPa * */
   const v = (ts / t8) + (n[9] / ((ts / t8) - n[10]));
 

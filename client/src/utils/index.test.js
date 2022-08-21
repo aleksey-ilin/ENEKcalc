@@ -7,4 +7,6 @@ it('getPsFromTs', () => {
   expect(getPsFromTs(300)).toBe(0.003_536_6); // 0.353 658 941 × 10 –2
   expect(getPsFromTs(500)).toBe(2.638_9); // 0.263 889 776 × 10 1
   expect(getPsFromTs(600)).toBe(12.344); // 0.123 443 146 × 10 2
+  expect(() => getPsFromTs(273.14)).toThrow('Температура меньше 273.15 K или больше 647.096 K');
+  expect(() => getPsFromTs(647.097)).toThrow('Температура меньше 273.15 K или больше 647.096 K');
 });
