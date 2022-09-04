@@ -8,7 +8,7 @@ describe('getPsFromTs', () => {
   });
 
   it('should throw error if temperature is not within the valid range', () => {
-    expect(() => getPsFromTs(273.14)).toThrow('Температура меньше 273.15 K или больше 647.096 K');
-    expect(() => getPsFromTs(647.097)).toThrow('Температура меньше 273.15 K или больше 647.096 K');
+    expect(() => getPsFromTs(273.15)).toThrow('Температура должна быть больше меньше 273.15 K');
+    expect(() => getPsFromTs(647.096)).toThrow('Температура должна быть меньше 647.096 K');
   });
 });
