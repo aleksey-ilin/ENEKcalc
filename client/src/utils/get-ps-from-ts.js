@@ -1,5 +1,5 @@
 import { formatResult } from './format-result';
-import { t8, p8, n } from './constants';
+import { t8, p8, n } from '../constants/region4';
 
 /**
  * @param {number} ts Saturation temperature, K
