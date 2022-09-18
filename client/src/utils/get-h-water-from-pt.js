@@ -16,9 +16,11 @@ export const getHWaterFromPT = (pressure, temperature) => {
     throw Error('Температура должна быть меньше 623.16 K');
   }
 
-  const ps = getPsFromTs(temperature); // здесь строка, не работает сравнение ниже
+  const ps = getPsFromTs(temperature);
   if (pressure < ps) {
-    throw Error(`Давление должна быть больше ${ps} MPa (давления насыщения при температуре ${temperature})`);
+    throw Error(
+      `Давление должна быть больше ${formatResult(ps)} MPa (давления насыщения при температуре ${temperature})`,
+    );
   }
 
   if (pressure > 100) {
@@ -39,5 +41,5 @@ export const getHWaterFromPT = (pressure, temperature) => {
   }
 
   const h = R * temperature * t * gt;
-  return formatResult(h);
+  return h;
 };

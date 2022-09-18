@@ -1,4 +1,3 @@
-import { formatResult } from './format-result';
 import { t8, p8, n } from '../constants/region4';
 
 /**
@@ -6,12 +5,12 @@ import { t8, p8, n } from '../constants/region4';
  * @returns {string} ts Saturation temperature, K
  * */
 export const getTsFromPs = (ps) => {
-  if (ps <= 611.213 * 10 ** -6) {
-    throw Error('Давление должно быть больше 611.213 Pa');
+  if (ps < 611.213 * 10 ** -6) {
+    throw Error('Давление должно быть больше или равно 611.213 Pa');
   }
 
-  if (ps >= 22.064) {
-    throw Error('Давление должно быть меньше  22.064 MPa');
+  if (ps > 22.064) {
+    throw Error('Давление должно быть меньше или равно 22.064 MPa');
   }
 
   /** Transformed pressure* */
@@ -25,7 +24,7 @@ export const getTsFromPs = (ps) => {
 
   const D = (2 * G) / (-F - Math.sqrt(F ** 2 - (4 * E * G)));
 
-  const result = t8 * ((n[10] + D - Math.sqrt(((n[10] + D) ** 2) - 4 * (n[9] + n[10] * D))) / 2);
+  const ts = t8 * ((n[10] + D - Math.sqrt(((n[10] + D) ** 2) - 4 * (n[9] + n[10] * D))) / 2);
 
-  return formatResult(result);
+  return ts;
 };
