@@ -8,8 +8,8 @@ describe('getHWaterFromPT', () => {
   });
 
   it('should throw error if temperature is not within the valid range', () => {
-    expect(() => getHWaterFromPT(3, 273.14)).toThrow('Температура должна быть больше 273.14 K');
-    expect(() => getHWaterFromPT(3, 623.16)).toThrow('Температура должна быть меньше 623.16 K');
+    expect(() => getHWaterFromPT(3, 273.14)).toThrow('Температура должна быть больше или равна 273.15 K');
+    expect(() => getHWaterFromPT(3, 623.16)).toThrow('Температура должна быть меньше или равна 623.15 K');
   });
 
   it('should throw error if pressure is not within the valid range', () => {

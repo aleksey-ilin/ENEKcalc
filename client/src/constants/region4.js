@@ -1,10 +1,10 @@
-/** Pressure, MPa * */
+/** Pressure, MPa */
 export const p8 = 1;
 
-/** Temperature, K * */
+/** Temperature, K */
 export const t8 = 1;
 
-/** Numerical values of the coefficients of the dimensionless saturation equations * */
+/** Numerical values of the coefficients of the dimensionless saturation equations */
 export const n = [
   null,
   0.116_705_214_527_67 * 10 ** 4,

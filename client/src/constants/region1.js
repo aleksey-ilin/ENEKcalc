@@ -1,10 +1,10 @@
-/** Pressure, MPa * */
+/** Pressure, MPa */
 export const p8 = 16.53;
 
-/** Temperature, K * */
+/** Temperature, K */
 export const t8 = 1386;
 
-/** Numerical values of the coefficients and exponents of the dimensionless Gibbs free energy  * */
+/** Numerical values of the coefficients and exponents of the dimensionless Gibbs free energy */
 export const numericalValues = [
   null,
   { I: 0, J: -2, n: 0.14632971213167 },

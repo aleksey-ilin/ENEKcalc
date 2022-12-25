@@ -4,16 +4,17 @@ import { getPsFromTs } from './get-ps-from-ts';
 import { formatResult } from './format-result';
 
 /**
- * @param {number} ps Saturation pressure, MPa
- * @returns {string} r Latent heat of vaporization, kJ/(kg*K)
+ * @param {number} ps Pressure of water, MPa
+ * @param {number} ps Temperature of water, K
+ * @returns {number} h Specific enthalpy of water, kJ/kg
  * */
 export const getHWaterFromPT = (pressure, temperature) => {
   if (temperature < 273.15) {
-    throw Error('Температура должна быть больше 273.14 K');
+    throw Error('Температура должна быть больше или равна 273.15 K');
   }
 
   if (temperature > 623.15) {
-    throw Error('Температура должна быть меньше 623.16 K');
+    throw Error('Температура должна быть меньше или равна 623.15 K');
   }
 
   const ps = getPsFromTs(temperature);
@@ -34,9 +35,9 @@ export const getHWaterFromPT = (pressure, temperature) => {
   const p = pressure / p8;
 
   let gt = 0;
-
   for (let i = 1; i <= 34; i += 1) {
     const { n, J, I } = numericalValues[i];
+
     gt += n * J * ((7.1 - p) ** I) * (t - 1.222) ** (J - 1);
   }
 

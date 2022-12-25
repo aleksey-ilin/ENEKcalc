@@ -2,7 +2,7 @@ import { t8, p8, n } from '../constants/region4';
 
 /**
  * @param {number} ts Saturation temperature, K
- * @returns {string} ps Saturation pressure, MPa
+ * @returns {number} ps Saturation pressure, MPa
  * */
 export const getPsFromTs = (ts) => {
   if (ts < 273.15) {
