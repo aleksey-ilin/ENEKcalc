@@ -5,8 +5,9 @@ import { formatResult } from './format-result';
 
 /**
  * @param {number} ps Pressure of water, MPa
- * @param {number} ps Temperature of water, K
+ * @param {number} t Temperature of water, K
  * @returns {number} h Specific enthalpy of water, kJ/kg
+ * @description Calculate enthalpy from pressure and temperature for water
  * */
 export const getHWaterFromPT = (pressure, temperature) => {
   if (temperature < 273.15) {

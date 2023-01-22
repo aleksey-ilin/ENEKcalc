@@ -8,6 +8,7 @@ import { formatResult } from './format-result';
  * @param {number} ps Pressure of steam, MPa
  * @param {number} ps Temperature of steam, K
  * @returns {number} h Specific enthalpy of steam, kJ/kg
+ * @description Calculate enthalpy from pressure and temperature for steam
  * */
 export const getHSteamFromPT = (pressure, temperature) => {
   if (pressure <= 0) {

@@ -3,6 +3,7 @@ const precision = 5;
 /**
  * @param {number} number Result in number
  * @returns {string} Result in string. Format see in tests
+ * @description Format calculating result
  * */
 export const formatResult = (number) => {
   const [wholePart] = number.toString().split('.');

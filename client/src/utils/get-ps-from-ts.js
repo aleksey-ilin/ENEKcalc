@@ -3,6 +3,7 @@ import { t8, p8, n } from '../constants/region4';
 /**
  * @param {number} ts Saturation temperature, K
  * @returns {number} ps Saturation pressure, MPa
+ * @description Calculate saturation pressure from saturation temperature
  * */
 export const getPsFromTs = (ts) => {
   if (ts < 273.15) {
