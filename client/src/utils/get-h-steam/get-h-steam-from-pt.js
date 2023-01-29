@@ -1,8 +1,7 @@
-import { R } from '../constants/common';
-import { t8, p8, numericalValuesOfIdealGas, numericalValuesOfResidual } from '../constants/region2';
-import { getPsFromTs } from './get-ps-from-ts';
-import { getPFromTForB23 } from './get-p-from-t-for-b23';
-import { formatResult } from './format-result';
+import { getPsFromTs } from '../get-ps-from-ts';
+import { getPFromTForB23 } from '../get-p-from-t-for-b23';
+import { formatResult } from '../format-result';
+import { calculateHSteamFromPT } from './calculate-h-steam-from-pt';
 
 /**
  * @param {number} ps Pressure of steam, MPa
@@ -29,6 +28,7 @@ export const getHSteamFromPT = (pressure, temperature) => {
 
   if (temperature >= 273.15 && temperature <= 623.15) {
     const ps = getPsFromTs(temperature);
+
     if (pressure > ps) {
       throw Error(
         `При температурe ${temperature} K давление должно быть меньше или равно`
@@ -38,35 +38,16 @@ export const getHSteamFromPT = (pressure, temperature) => {
   }
 
   if (temperature > 623.15 && temperature <= 863.15) {
-    const pFromTForB23 = getPFromTForB23(temperature);
-    if (pressure > pFromTForB23) {
+    const pForB23 = getPFromTForB23(temperature);
+    if (pressure > pForB23) {
       throw Error(
         `При температурe ${temperature} K давление должно быть меньше или равно давлению на границе`
-        + ` между 2 и 3 регионами при этой температура (${formatResult(pFromTForB23)} MPa)`,
+        + ` между 2 и 3 регионами при этой температура (${formatResult(pForB23)} MPa)`,
       );
     }
   }
 
-  /** Inverse reduced temperature * */
-  const t = t8 / temperature;
-
-  /** Reduced pressure * */
-  const p = pressure / p8;
-
-  let g0t = 0;
-  for (let i = 1; i <= 9; i += 1) {
-    const { J0, n0 } = numericalValuesOfIdealGas[i];
-    g0t += n0 * J0 * (t ** (J0 - 1));
-  }
-
-  let grt = 0;
-  for (let i = 1; i <= 43; i += 1) {
-    const { n, J, I } = numericalValuesOfResidual[i];
-
-    grt += n * (p ** I) * J * ((t - 0.5) ** (J - 1));
-  }
-
-  const h = R * temperature * t * (g0t + grt);
+  const h = calculateHSteamFromPT(pressure, temperature);
 
   return h;
 };

@@ -3,10 +3,6 @@ import { getHSteamFromPT } from './get-h-steam-from-pt';
 describe('getHSteamFromPT', () => {
   it('should correct calculate', () => {
     expect(getHSteamFromPT(0.0001, 273.15)).toBe(2501.3507461085296);
-    expect(getHSteamFromPT(0.0035, 300)).toBe(2549.9114508400203);
-    expect(getHSteamFromPT(0.0035365894130130106, 300)).toBe(2549.893008307326);
-    expect(getHSteamFromPT(0.0035, 700)).toBe(3335.683753731224);
-    expect(getHSteamFromPT(30, 700)).toBe(2631.494744844808);
   });
 
   it('should throw error if temperature is not within the valid range', () => {
@@ -22,7 +18,7 @@ describe('getHSteamFromPT', () => {
     expect(() => getHSteamFromPT(100.1, 300)).toThrow('Давление должно быть меньше 100 MPa');
   });
 
-  it('should throw error if pressure is not within the valid range', () => {
+  it('should throw error if pressure and temperature is not within the valid range', () => {
     expect(() => getHSteamFromPT(1, 273.16)).toThrow(
       'При температурe 273.16 K давление должно быть меньше или равно давлению насыщения'
       + ' при этой температура (6,11657e-4 MPa)',

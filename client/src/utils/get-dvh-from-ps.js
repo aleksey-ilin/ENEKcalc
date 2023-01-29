@@ -1,5 +1,5 @@
 import { getTsFromPs } from './get-ts-from-ps';
-import { getHSteamFromPT } from './get-h-steam-from-pt';
+import { getHSteamFromPs } from './get-h-steam/get-h-steam-from-ps';
 import { getHWaterFromPT } from './get-h-water-from-pt';
 
 /**
@@ -8,12 +8,8 @@ import { getHWaterFromPT } from './get-h-water-from-pt';
  * @description Calculate uncertainty in the enthalpy of vaporization from saturation temperature
  * */
 export const getDVHFromPs = (ps) => {
-  console.debug(ps);
-
   const ts = getTsFromPs(ps);
-  console.debug(ts);
-
-  const dvh = getHSteamFromPT(ps, ts) - getHWaterFromPT(ps, ts);
+  const dvh = getHSteamFromPs(ps) - getHWaterFromPT(ps, ts);
 
   return dvh;
 };
