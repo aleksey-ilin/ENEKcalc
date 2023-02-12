@@ -1,6 +1,6 @@
-import { getTsFromPs } from './get-ts-from-ps';
-import { getHSteamFromPs } from './get-h-steam/get-h-steam-from-ps';
-import { getHWaterFromPT } from './get-h-water-from-pt';
+import { getTsFromPs } from '../get-ts-from-ps';
+import { getHSteamFromPs } from '../get-h-steam/get-h-steam-from-ps';
+import { getHWaterFromPT } from '../get-h-water-from-pt';
 
 /**
  * @param {number} ps Saturation pressure, MPa
