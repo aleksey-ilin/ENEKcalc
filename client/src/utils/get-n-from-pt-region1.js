@@ -1,15 +1,14 @@
-import { R } from '../constants/common';
 import { t8, p8, numericalValues } from '../constants/region1';
+import { R } from '../constants/common';
 import { getPsFromTs } from './get-ps-from-ts';
 import { formatResult } from './format-result';
 
 /**
  * @param {number} ps Pressure of water, MPa
  * @param {number} t Temperature of water, K
- * @returns {number} h Specific enthalpy of water, kJ/kg
- * @description Calculate enthalpy from pressure and temperature for water
+ * @returns {number} n Specific volume of water, m3/kg
  * */
-export const getHWaterFromPT = (pressure, temperature) => {
+export const getNFromPTRegion1 = (pressure, temperature) => {
   if (temperature < 273.15) {
     throw Error('Температура должна быть больше или равна 273.15 K');
   }
@@ -29,20 +28,19 @@ export const getHWaterFromPT = (pressure, temperature) => {
     throw Error('Давление должна быть меньше 100 MPa');
   }
 
+  const p = pressure / p8;
+
   /** Inverse reduced temperature * */
   const t = t8 / temperature;
 
-  /** Reduced pressure * */
-  const p = pressure / p8;
-
-  let gt = 0;
+  let gp = 0;
   for (let i = 1; i <= 34; i += 1) {
     const { n, J, I } = numericalValues[i];
 
-    gt += n * J * ((7.1 - p) ** I) * ((t - 1.222) ** (J - 1));
+    gp += -n * I * ((7.1 - p) ** (I - 1)) * ((t - 1.222) ** J);
   }
 
-  const h = R * temperature * t * gt;
+  const n = (p * gp * ((R * temperature) / pressure)) / 1000;
 
-  return h;
+  return n;
 };
