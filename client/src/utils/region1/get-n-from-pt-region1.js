@@ -10,6 +10,7 @@ import { validateParamsRegion1 } from './validate-params-region1';
 export const getNFromPTRegion1 = (pressure, temperature) => {
   validateParamsRegion1(pressure, temperature);
 
+  /** Reduced pressure * */
   const p = pressure / p8;
 
   /** Inverse reduced temperature * */
