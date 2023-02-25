@@ -1,15 +1,14 @@
-import { getPsFromTs } from '../get-ps-from-ts';
-import { getPFromTForB23 } from '../get-p-from-t-for-b23';
+import { getPsFromTsRegion4 } from '../region4/get-ps-from-ts-region4';
+import { getPFromTRegionBetween23 } from '../region-between-2-3/get-p-from-t-region-between-2-3';
 import { formatResult } from '../format-result';
-import { calculateHSteamFromPT } from './calculate-h-steam-from-pt';
+import { calculateHFromPTRegion2 } from './calculate-h-from-pt-region2';
 
 /**
- * @param {number} ps Pressure of steam, MPa
- * @param {number} ps Temperature of steam, K
- * @returns {number} h Specific enthalpy of steam, kJ/kg
- * @description Calculate enthalpy from pressure and temperature for steam
+ * @param {number} ps Pressure, MPa
+ * @param {number} ps Temperature, K
+ * @returns {number} h Specific enthalpy, kJ/kg
  * */
-export const getHSteamFromPT = (pressure, temperature) => {
+export const getHFromPTRegion2 = (pressure, temperature) => {
   if (pressure <= 0) {
     throw Error('Давление должно быть больше 0 МПа');
   }
@@ -27,7 +26,7 @@ export const getHSteamFromPT = (pressure, temperature) => {
   }
 
   if (temperature >= 273.15 && temperature <= 623.15) {
-    const ps = getPsFromTs(temperature);
+    const ps = getPsFromTsRegion4(temperature);
 
     if (pressure > ps) {
       throw Error(
@@ -38,7 +37,7 @@ export const getHSteamFromPT = (pressure, temperature) => {
   }
 
   if (temperature > 623.15 && temperature <= 863.15) {
-    const pForB23 = getPFromTForB23(temperature);
+    const pForB23 = getPFromTRegionBetween23(temperature);
     if (pressure > pForB23) {
       throw Error(
         `При температурe ${temperature} K давление должно быть меньше или равно давлению на границе`
@@ -47,7 +46,7 @@ export const getHSteamFromPT = (pressure, temperature) => {
     }
   }
 
-  const h = calculateHSteamFromPT(pressure, temperature);
+  const h = calculateHFromPTRegion2(pressure, temperature);
 
   return h;
 };

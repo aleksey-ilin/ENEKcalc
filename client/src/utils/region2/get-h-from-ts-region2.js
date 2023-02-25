@@ -1,14 +1,13 @@
-import { getPsFromTs } from '../get-ps-from-ts';
+import { getPsFromTsRegion4 } from '../region4/get-ps-from-ts-region4';
 // import { getPFromTForB23 } from '../get-p-from-t-for-b23';
 // import { formatResult } from '../format-result';
-import { calculateHSteamFromPT } from './calculate-h-steam-from-pt';
+import { calculateHFromPTRegion2 } from './calculate-h-from-pt-region2';
 
 /**
- * @param {number} ps Saturation temperature of steam, K
- * @returns {number} h Specific enthalpy of steam, kJ/kg
- * @description Calculate enthalpy from saturation temperature for steam
+ * @param {number} ps Saturation temperature, K
+ * @returns {number} h Specific enthalpy, kJ/kg
  * */
-export const getHSteamFromTs = (ts) => {
+export const getHFromTsRegion2 = (ts) => {
   if (ts < 273.15) {
     throw Error('Температура должна быть больше или равна 273.15 K');
   }
@@ -17,7 +16,7 @@ export const getHSteamFromTs = (ts) => {
     throw Error('Температура должна быть меньше или равна 1073.15 K');
   }
 
-  const ps = getPsFromTs(ts);
+  const ps = getPsFromTsRegion4(ts);
 
   // предполагаю что ps > pForB23 невозможно. уточнить
   // if (ts > 623.15 && ts <= 863.15) {
@@ -31,7 +30,7 @@ export const getHSteamFromTs = (ts) => {
   //   }
   // }
 
-  const h = calculateHSteamFromPT(ps, ts);
+  const h = calculateHFromPTRegion2(ps, ts);
 
   return h;
 };

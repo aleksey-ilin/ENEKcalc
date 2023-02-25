@@ -1,11 +1,10 @@
-import { t8, p8, n } from '../constants/region4';
+import { t8, p8, n } from './constants-region4';
 
 /**
  * @param {number} ts Saturation temperature, K
  * @returns {number} ps Saturation pressure, MPa
- * @description Calculate saturation pressure from saturation temperature
  * */
-export const getPsFromTs = (ts) => {
+export const getPsFromTsRegion4 = (ts) => {
   if (ts < 273.15) {
     throw Error('Температура должна быть больше или равна 273.15 K');
   }
@@ -23,7 +22,7 @@ export const getPsFromTs = (ts) => {
 
   const C = (n[6] * v ** 2) + (n[7] * v) + n[8];
 
-  const ps = p8 * ((2 * C) / (-B + Math.sqrt((B * B) - 4 * A * C))) ** 4;
+  const ps = p8 * (((2 * C) / (-B + Math.sqrt((B * B) - (4 * A * C)))) ** 4);
 
   return ps;
 };

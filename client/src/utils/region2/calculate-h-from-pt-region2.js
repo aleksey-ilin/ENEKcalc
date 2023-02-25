@@ -1,13 +1,12 @@
 import { R } from '../../constants/common';
-import { t8, p8, numericalValuesOfIdealGas, numericalValuesOfResidual } from '../../constants/region2';
+import { t8, p8, numericalValuesOfIdealGas, numericalValuesOfResidual } from './constants-region2';
 
 /**
- * @param {number} ps Pressure of steam, MPa
- * @param {number} ps Temperature of steam, K
- * @returns {number} h Specific enthalpy of steam, kJ/kg
- * @description Calculate enthalpy from pressure and temperature for steam
+ * @param {number} ps Pressure, MPa
+ * @param {number} ps Temperature, K
+ * @returns {number} h Specific enthalpy, kJ/kg
  * */
-export const calculateHSteamFromPT = (pressure, temperature) => {
+export const calculateHFromPTRegion2 = (pressure, temperature) => {
   /** Inverse reduced temperature * */
   const t = t8 / temperature;
 

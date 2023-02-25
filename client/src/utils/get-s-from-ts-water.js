@@ -1,10 +1,9 @@
 /**
  * @param {number} ts Saturation temperature, K
  * @returns {number} s Surface tension of ordinary water substance, N/m
- * @description Surface tension of ordinary water substance from saturation temperature
  * {@link http://www.iapws.org/relguide/Surf-H2O.html Equation}
  * */
-export const getSFromTs = (ts) => {
+export const getSFromTsWater = (ts) => {
   const triplePoint = 0.01 + 273.15;
   const tc = 647.096;
 
