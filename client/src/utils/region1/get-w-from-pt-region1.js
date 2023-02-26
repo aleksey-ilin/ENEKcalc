@@ -5,9 +5,9 @@ import { validateParamsRegion1 } from './validate-params-region1';
 /**
  * @param {number} ps Pressure, MPa
  * @param {number} t Temperature, K
- * @returns {number} h Specific isochoric heat capacity, kJ/(kg*K)
+ * @returns {number} h Speed of sound, m/s
  * */
-export const getCnFromPTRegion1 = (pressure, temperature) => {
+export const getWFromPTRegion1 = (pressure, temperature) => {
   validateParamsRegion1(pressure, temperature);
 
   /** Inverse reduced temperature * */
@@ -44,7 +44,12 @@ export const getCnFromPTRegion1 = (pressure, temperature) => {
     gpp += n * I * (I - 1) * ((7.1 - p) ** (I - 2)) * ((t - 1.222) ** J);
   }
 
-  const cn = R * (-(t ** 2 * gtt) + (((gp - t * gpt) ** 2) / gpp));
+  const jInKJ = 1000; // J in kJ
 
-  return cn;
+  const fraction1 = (gp - t * gpt) ** 2 / (t ** 2 * gtt);
+  const fraction2 = gp ** 2 / (fraction1 - gpp);
+
+  const w = Math.sqrt(R * temperature * fraction2 * jInKJ);
+
+  return w;
 };
